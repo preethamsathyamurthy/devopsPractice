@@ -14,12 +14,13 @@ pipeline {
     stage('ParallelCode') {
       steps {
         parallel(
-        a: {
-          echo "This is branch a"
-        },
-        b: {
-          echo "This is branch b"
-        }
+           a: {
+            echo "This is branch a"
+          },
+          b: {
+            echo "This is branch b"
+          }
+        )
       }
     }
   }
