@@ -11,9 +11,15 @@ pipeline {
         sh 'echo "Tutturu"'
       }
     }
-    stage('Test3') {
+    stage('ParallelCode') {
       steps {
-        sh 'echo "Tralala"'
+        parallel(
+        a: {
+          echo "This is branch a"
+        },
+        b: {
+          echo "This is branch b"
+        }
       }
     }
   }
